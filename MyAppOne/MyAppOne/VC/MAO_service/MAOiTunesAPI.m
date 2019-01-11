@@ -22,10 +22,9 @@
       {
           if (error) {
               NSLog(@"Respuesta: %@ - Error: %@", response, error);
-              return;
           }
           
-          NSArray *arrJson = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+          NSArray *arrJson = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
           callBack(arrJson, error, response);
       }
       ]resume];

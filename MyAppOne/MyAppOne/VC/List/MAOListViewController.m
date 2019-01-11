@@ -19,8 +19,12 @@
 {
     self = [super init];
     if(self){
+        /* NSLog(@"Desde el otro controlador: %@", arrayModels);
+        NSInteger varCta = arrayModels.count;
+        NSLog(@"%d", varCta);
+        */
         _arrayModels = arrayModels;
-        NSLog(@"Desde el otro controlador: %@", arrayModels);
+        
     }
     return self;
 }
@@ -41,7 +45,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text= @"Hello";
+    cell.textLabel.text= [self.arrayModels objectAtIndex:indexPath.row].trackName;
     return cell;
 }
 

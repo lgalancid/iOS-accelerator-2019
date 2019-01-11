@@ -26,26 +26,33 @@
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.btnCargarDatos setHidden:true];
         indicator.center = self.view.center;
         [self.view addSubview:indicator];
         [indicator startAnimating];
     });
+    
     [[MAOiTunesAPI iTunesServiceInstance]  getResults:^(NSArray *arrData, NSError *errMsg, NSURLResponse *varResponse) {
         if (!errMsg) {
             //NSLog(@"Error: %@", errMsg);
             //NSLog(@"Array: %@", varResponse);
             //NSLog(@"Array: %@", arrData);
-            MAOListViewController *objListView = [[MAOListViewController alloc] init];
-            objListView = [objListView initWithModel:arrData];
+            NSMutableArray *arrJSON = NSMutableArray.new;
+            for (NSDictionary *dicDatos in [arrData valueForKey:@"results"]) {
+                [arrJSON addObject: [MAOListViewControllerModel initWithDictionary:dicDatos]];
+            }
+            MAOListViewController *objListView = [[MAOListViewController alloc] initWithModel:arrJSON];
+                        if (arrData) {
+                [self.navigationController pushViewController:objListView animated:false];
+            }
         }
         else {
             NSLog(@"%@", errMsg);
-            UIAlertController* msgBox = [UIAlertController alertControllerWithTitle:@"Error" message:@"Error inesperado. Consultar log de errores." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController* msgBox = [UIAlertController alertControllerWithTitle:errMsg.localizedFailureReason message:errMsg.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
             [msgBox addAction:defaultAction];
             [self presentViewController:msgBox animated:YES completion:nil];
         }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             sleep(1);
             [indicator stopAnimating];
