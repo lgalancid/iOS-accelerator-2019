@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../MAO_service/MAOiTunesAPI.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

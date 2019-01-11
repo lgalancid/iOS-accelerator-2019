@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAOInitialViewController">
             <connections>
+                <outlet property="btnCargarDatos" destination="3dI-Pf-D0G" id="Qjt-cd-l3s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

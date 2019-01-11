@@ -18,6 +18,8 @@
 		14B0ECC721E6D417004B2173 /* MAOListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0ECC521E6D417004B2173 /* MAOListViewController.m */; };
 		14B0ECC821E6D417004B2173 /* MAOListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B0ECC621E6D417004B2173 /* MAOListViewController.xib */; };
 		14B0ECCB21E790DD004B2173 /* MAOListViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0ECCA21E790DD004B2173 /* MAOListViewControllerModel.m */; };
+		972783B021E7B10600AE7797 /* MAOiTunesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 972783AF21E7B10600AE7797 /* MAOiTunesAPI.m */; };
+		972783B321E7B56F00AE7797 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 972783B221E7B56F00AE7797 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		14B0ECC621E6D417004B2173 /* MAOListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOListViewController.xib; sourceTree = "<group>"; };
 		14B0ECC921E790DD004B2173 /* MAOListViewControllerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAOListViewControllerModel.h; sourceTree = "<group>"; };
 		14B0ECCA21E790DD004B2173 /* MAOListViewControllerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOListViewControllerModel.m; sourceTree = "<group>"; };
+		972783AE21E7B10600AE7797 /* MAOiTunesAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAOiTunesAPI.h; sourceTree = "<group>"; };
+		972783AF21E7B10600AE7797 /* MAOiTunesAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOiTunesAPI.m; sourceTree = "<group>"; };
+		972783B121E7B56F00AE7797 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		972783B221E7B56F00AE7797 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,10 @@
 		14B0ECB421E6D215004B2173 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				972783B121E7B56F00AE7797 /* Constants.h */,
+				972783B221E7B56F00AE7797 /* Constants.m */,
+				972783A321E7AC3B00AE7797 /* MAO_guard */,
+				972783A221E7A82D00AE7797 /* MAO_service */,
 				14B0ECBE21E6D402004B2173 /* Initial */,
 				14B0ECBD21E6D402004B2173 /* List */,
 			);
@@ -167,6 +177,22 @@
 				14B0ECC121E6D402004B2173 /* MAOInitialViewController.m */,
 			);
 			path = Initial;
+			sourceTree = "<group>";
+		};
+		972783A221E7A82D00AE7797 /* MAO_service */ = {
+			isa = PBXGroup;
+			children = (
+				972783AE21E7B10600AE7797 /* MAOiTunesAPI.h */,
+				972783AF21E7B10600AE7797 /* MAOiTunesAPI.m */,
+			);
+			path = MAO_service;
+			sourceTree = "<group>";
+		};
+		972783A321E7AC3B00AE7797 /* MAO_guard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MAO_guard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B0EC9221E6D190004B2173 /* main.m in Sources */,
+				972783B021E7B10600AE7797 /* MAOiTunesAPI.m in Sources */,
+				972783B321E7B56F00AE7797 /* Constants.m in Sources */,
 				14B0ECCB21E790DD004B2173 /* MAOListViewControllerModel.m in Sources */,
 				14B0ECC321E6D402004B2173 /* MAOInitialViewController.m in Sources */,
 				14B0ECC721E6D417004B2173 /* MAOListViewController.m in Sources */,

@@ -15,20 +15,18 @@
 
 @implementation MAOListViewController
 
-
 - (instancetype) initWithModel:( NSArray<MAOListViewControllerModel *> *) arrayModels
 {
     self = [super init];
     if(self){
         _arrayModels = arrayModels;
+        NSLog(@"Desde el otro controlador: %@", arrayModels);
     }
-    
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.resultTable.delegate = self;
     self.resultTable.dataSource = self;
     [self.resultTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
