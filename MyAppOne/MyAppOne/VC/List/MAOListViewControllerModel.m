@@ -20,7 +20,7 @@
     objModelo.trackViewUrl = dicModelo[@"trackViewUrl"];
     objModelo.collectionPrice = dicModelo[@"collectionPrice"];
     objModelo.trackPrice = dicModelo[@"trackPrice"];
-    
+    objModelo.releaseDate = dicModelo[@"releaseDate"];
     return objModelo;
 }
 

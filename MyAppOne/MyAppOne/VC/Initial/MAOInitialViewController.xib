@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAOInitialViewController">
             <connections>
                 <outlet property="btnCargarDatos" destination="3dI-Pf-D0G" id="Qjt-cd-l3s"/>
+                <outlet property="btnCargarInvertido" destination="J4q-Se-nZO" id="Pmo-Ih-wvP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,26 +22,58 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My App One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wJ-t9-lQ6">
-                    <rect key="frame" x="118" y="105" width="139.5" height="31.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dI-Pf-D0G">
-                    <rect key="frame" x="143" y="318.5" width="89" height="30"/>
+                    <rect key="frame" x="143" y="168.5" width="89" height="30"/>
                     <state key="normal" title="Cargar datos"/>
                     <connections>
                         <action selector="onClickSelection:" destination="-1" eventType="touchUpInside" id="aF8-lI-fE7"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHa-sb-GfK">
+                    <rect key="frame" x="100" y="206.5" width="175" height="30"/>
+                    <state key="normal" title="Cargar datos por Track Id"/>
+                    <connections>
+                        <action selector="byTrackId:" destination="-1" eventType="touchUpInside" id="Jqr-St-0G0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUD-qu-oKg">
+                    <rect key="frame" x="54" y="252.5" width="266" height="30"/>
+                    <state key="normal" title="Cargar datos por fecha de lanzamiento"/>
+                    <connections>
+                        <action selector="byLaunchDate:" destination="-1" eventType="touchUpInside" id="xkF-dG-koi"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My App One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wJ-t9-lQ6">
+                    <rect key="frame" x="118" y="53" width="139.5" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4q-Se-nZO">
+                    <rect key="frame" x="79" y="300" width="217" height="30"/>
+                    <state key="normal" title="Cargar datos en orden invertido"/>
+                    <connections>
+                        <action selector="InvertSort:" destination="-1" eventType="touchUpInside" id="V8w-zZ-EXo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="3dI-Pf-D0G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9YH-fV-H7t"/>
-                <constraint firstItem="8wJ-t9-lQ6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GvI-3y-TAM"/>
-                <constraint firstItem="3dI-Pf-D0G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NlG-QJ-RZW"/>
-                <constraint firstItem="8wJ-t9-lQ6" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="85" id="TJF-EA-yYX"/>
+                <constraint firstItem="3dI-Pf-D0G" firstAttribute="top" secondItem="8wJ-t9-lQ6" secondAttribute="bottom" constant="83.5" id="1Pq-ym-iif"/>
+                <constraint firstItem="fHa-sb-GfK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="100" id="BT2-mZ-oSQ"/>
+                <constraint firstItem="8wJ-t9-lQ6" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="118" id="D8i-Kt-aH4"/>
+                <constraint firstItem="fHa-sb-GfK" firstAttribute="top" secondItem="3dI-Pf-D0G" secondAttribute="bottom" constant="8" id="Ksh-2q-itC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="J4q-Se-nZO" secondAttribute="trailing" constant="79" id="OSb-Uz-tyb"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="fHa-sb-GfK" secondAttribute="trailing" constant="100" id="Rwb-Tt-w47"/>
+                <constraint firstItem="YUD-qu-oKg" firstAttribute="top" secondItem="fHa-sb-GfK" secondAttribute="bottom" constant="16" id="WxY-6e-3jR"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="3dI-Pf-D0G" secondAttribute="trailing" constant="143" id="faH-VO-WMP"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="YUD-qu-oKg" secondAttribute="trailing" constant="55" id="hbc-3X-8eH"/>
+                <constraint firstItem="J4q-Se-nZO" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="79" id="ifb-Wo-dwa"/>
+                <constraint firstItem="YUD-qu-oKg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="54" id="ohd-2D-3ea"/>
+                <constraint firstItem="J4q-Se-nZO" firstAttribute="top" secondItem="YUD-qu-oKg" secondAttribute="bottom" constant="17.5" id="pZP-08-yVS"/>
+                <constraint firstItem="3dI-Pf-D0G" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="143" id="pa4-yD-QK9"/>
+                <constraint firstItem="8wJ-t9-lQ6" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="33" id="tJc-aI-7Jk"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="8wJ-t9-lQ6" secondAttribute="trailing" constant="117.5" id="zmv-Qa-rCl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

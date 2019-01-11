@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "../MAO_service/MAOiTunesAPI.h"
+#import "MAOListViewControllerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MAOInitialViewController : UIViewController
+
+-(NSArray<MAOListViewControllerModel *> *) sortByTrack:(NSArray<MAOListViewControllerModel *> *)arrData;
+
+-(NSArray<MAOListViewControllerModel *> *) sortByDate:(NSArray<MAOListViewControllerModel *> *)arrData;
+
+-(NSArray<MAOListViewControllerModel *> *) sortInvertArray:(NSArray<MAOListViewControllerModel *> *)arrData;
+
 
 @end
 
