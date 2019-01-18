@@ -10,7 +10,7 @@
 
 @implementation MAOListViewControllerModel
 
-+ (instancetype)initWithDictionary:(NSDictionary *)dicModelo{
+- (instancetype)initWithDictionary:(NSDictionary *)dicModelo{
     MAOListViewControllerModel *objModelo = [[MAOListViewControllerModel alloc] init];
     objModelo.artistName = dicModelo[@"artistName"];
     objModelo.collectionName = dicModelo[@"collectionName"];
@@ -21,6 +21,7 @@
     objModelo.collectionPrice = dicModelo[@"collectionPrice"];
     objModelo.trackPrice = dicModelo[@"trackPrice"];
     objModelo.releaseDate = dicModelo[@"releaseDate"];
+    objModelo.artworkUrl100 = dicModelo[@"artworkUrl100"];
     return objModelo;
 }
 

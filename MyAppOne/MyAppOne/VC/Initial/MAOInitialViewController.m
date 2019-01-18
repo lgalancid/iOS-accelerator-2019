@@ -7,6 +7,7 @@
 //
 #import "MAOInitialViewController.h"
 #import "MAOListViewController.h"
+#import "PruebaViewController.h"
 
 @interface MAOInitialViewController ()
 
@@ -36,32 +37,34 @@
             //NSLog(@"Array: %@", arrData);
             NSMutableArray *arrJSON = NSMutableArray.new;
             for (NSDictionary *dicDatos in [arrData valueForKey:@"results"]) {
-                [arrJSON addObject: [MAOListViewControllerModel initWithDictionary:dicDatos]];
+                
+                MAOListViewControllerModel *objModel = MAOListViewControllerModel.new;
+                
+                [arrJSON addObject: [objModel initWithDictionary:dicDatos]];
             }
             NSArray *arrJSONProcesado = NSMutableArray.new;
             switch (parGetType) {
                 case 1:
-                    NSLog(@"Opcion 1");
                     arrJSONProcesado = arrJSON;
                     break;
                 case 2:
-                    NSLog(@"Opcion 2");
                     arrJSONProcesado = [self sortByTrack:arrJSON];
                     break;
                 case 3:
-                    NSLog(@"Opcion 3");
                     arrJSONProcesado = [self sortByDate:arrJSON];
                     break;
                 case 4:
                     arrJSONProcesado = [self sortInvertArray:arrJSON];
-                    NSLog(@"Opcion 4");
                     break;
                 default:
                     break;
             }
-            MAOListViewController *objListView = [[MAOListViewController alloc] initWithModel:arrJSONProcesado];
+            
+//            MAOViewController *objViewController = [[MAOViewController alloc] initWithModel:arrJSONProcesado];
+            
+            PruebaViewController *prueba = [[PruebaViewController alloc] initWithModel: arrJSONProcesado];
             if (arrData) {
-                [self.navigationController pushViewController:objListView animated:false];
+                [self.navigationController pushViewController:prueba animated:YES];
             }
         }
         else {

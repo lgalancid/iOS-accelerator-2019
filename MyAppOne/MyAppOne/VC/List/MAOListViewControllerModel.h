@@ -24,8 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *trackPrice;
 
 @property (nonatomic, strong) NSDate *releaseDate;
+@property (nonatomic, strong) NSString *artworkUrl100;
 
-+(instancetype) initWithDictionary:(NSDictionary*)dicModelo;
+
+
+-(instancetype) initWithDictionary:(NSDictionary*)dicModelo;
 
 @end
 

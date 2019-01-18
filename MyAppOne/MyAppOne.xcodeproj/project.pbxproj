@@ -20,6 +20,12 @@
 		14B0ECCB21E790DD004B2173 /* MAOListViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0ECCA21E790DD004B2173 /* MAOListViewControllerModel.m */; };
 		972783B021E7B10600AE7797 /* MAOiTunesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 972783AF21E7B10600AE7797 /* MAOiTunesAPI.m */; };
 		972783B321E7B56F00AE7797 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 972783B221E7B56F00AE7797 /* Constants.m */; };
+		976F0FC221F10810002B676C /* PruebaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976F0FC021F10810002B676C /* PruebaViewController.m */; };
+		976F0FC321F10810002B676C /* PruebaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976F0FC121F10810002B676C /* PruebaViewController.xib */; };
+		976F0FC721F10C7C002B676C /* pruebaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 976F0FC521F10C7C002B676C /* pruebaTableViewCell.m */; };
+		976F0FC821F10C7C002B676C /* pruebaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976F0FC621F10C7C002B676C /* pruebaTableViewCell.xib */; };
+		976F0FD621F200D0002B676C /* MAOModalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 976F0FD421F200D0002B676C /* MAOModalVC.m */; };
+		976F0FD721F200D0002B676C /* MAOModalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976F0FD521F200D0002B676C /* MAOModalVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,15 @@
 		972783AF21E7B10600AE7797 /* MAOiTunesAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOiTunesAPI.m; sourceTree = "<group>"; };
 		972783B121E7B56F00AE7797 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		972783B221E7B56F00AE7797 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		976F0FBF21F10810002B676C /* PruebaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PruebaViewController.h; sourceTree = "<group>"; };
+		976F0FC021F10810002B676C /* PruebaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PruebaViewController.m; sourceTree = "<group>"; };
+		976F0FC121F10810002B676C /* PruebaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PruebaViewController.xib; sourceTree = "<group>"; };
+		976F0FC421F10C7C002B676C /* pruebaTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pruebaTableViewCell.h; sourceTree = "<group>"; };
+		976F0FC521F10C7C002B676C /* pruebaTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pruebaTableViewCell.m; sourceTree = "<group>"; };
+		976F0FC621F10C7C002B676C /* pruebaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = pruebaTableViewCell.xib; sourceTree = "<group>"; };
+		976F0FD321F200D0002B676C /* MAOModalVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAOModalVC.h; sourceTree = "<group>"; };
+		976F0FD421F200D0002B676C /* MAOModalVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOModalVC.m; sourceTree = "<group>"; };
+		976F0FD521F200D0002B676C /* MAOModalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOModalVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +164,8 @@
 			children = (
 				972783B121E7B56F00AE7797 /* Constants.h */,
 				972783B221E7B56F00AE7797 /* Constants.m */,
+				976F0FCF21F2009C002B676C /* Modal */,
+				976F0FBE21F107FC002B676C /* prueba */,
 				972783A321E7AC3B00AE7797 /* MAO_guard */,
 				972783A221E7A82D00AE7797 /* MAO_service */,
 				14B0ECBE21E6D402004B2173 /* Initial */,
@@ -193,6 +210,29 @@
 			children = (
 			);
 			path = MAO_guard;
+			sourceTree = "<group>";
+		};
+		976F0FBE21F107FC002B676C /* prueba */ = {
+			isa = PBXGroup;
+			children = (
+				976F0FBF21F10810002B676C /* PruebaViewController.h */,
+				976F0FC021F10810002B676C /* PruebaViewController.m */,
+				976F0FC121F10810002B676C /* PruebaViewController.xib */,
+				976F0FC421F10C7C002B676C /* pruebaTableViewCell.h */,
+				976F0FC521F10C7C002B676C /* pruebaTableViewCell.m */,
+				976F0FC621F10C7C002B676C /* pruebaTableViewCell.xib */,
+			);
+			path = prueba;
+			sourceTree = "<group>";
+		};
+		976F0FCF21F2009C002B676C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				976F0FD321F200D0002B676C /* MAOModalVC.h */,
+				976F0FD421F200D0002B676C /* MAOModalVC.m */,
+				976F0FD521F200D0002B676C /* MAOModalVC.xib */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +338,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976F0FC821F10C7C002B676C /* pruebaTableViewCell.xib in Resources */,
+				976F0FD721F200D0002B676C /* MAOModalVC.xib in Resources */,
 				14B0EC8F21E6D190004B2173 /* LaunchScreen.storyboard in Resources */,
 				14B0EC8C21E6D190004B2173 /* Assets.xcassets in Resources */,
 				14B0ECC821E6D417004B2173 /* MAOListViewController.xib in Resources */,
+				976F0FC321F10810002B676C /* PruebaViewController.xib in Resources */,
 				14B0ECC221E6D402004B2173 /* MAOInitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,9 +371,12 @@
 			files = (
 				14B0EC9221E6D190004B2173 /* main.m in Sources */,
 				972783B021E7B10600AE7797 /* MAOiTunesAPI.m in Sources */,
+				976F0FC221F10810002B676C /* PruebaViewController.m in Sources */,
 				972783B321E7B56F00AE7797 /* Constants.m in Sources */,
 				14B0ECCB21E790DD004B2173 /* MAOListViewControllerModel.m in Sources */,
 				14B0ECC321E6D402004B2173 /* MAOInitialViewController.m in Sources */,
+				976F0FD621F200D0002B676C /* MAOModalVC.m in Sources */,
+				976F0FC721F10C7C002B676C /* pruebaTableViewCell.m in Sources */,
 				14B0ECC721E6D417004B2173 /* MAOListViewController.m in Sources */,
 				14B0EC8421E6D18C004B2173 /* AppDelegate.m in Sources */,
 			);
