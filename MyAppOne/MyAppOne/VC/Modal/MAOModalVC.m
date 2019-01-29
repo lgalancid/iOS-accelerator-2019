@@ -70,10 +70,9 @@
 
 - (IBAction)didClickBtnAceptar:(UIButton *)sender {
     NSURL *varURL = [NSURL URLWithString:_objModelo.trackViewUrl];
-    NSURL *varURL2 = [NSURL URLWithString:@"https://itunes.apple.com/us/album/chop-suey/273714443?i=273714640&uo=4"];
 
     NSLog(@"%@", _objModelo.trackViewUrl);
-    [[UIApplication sharedApplication]openURL:varURL2 options:@{} completionHandler:^(BOOL success) {
+    [[UIApplication sharedApplication]openURL:varURL options:@{} completionHandler:^(BOOL success) {
         if (success) {
             NSLog(@"OK");
         }
@@ -82,6 +81,11 @@
 
 - (IBAction)didClickBtnAnterior:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if(touches.anyObject.view != self.viewContenedor ) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 

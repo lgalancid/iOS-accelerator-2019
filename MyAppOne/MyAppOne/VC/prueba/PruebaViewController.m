@@ -28,7 +28,9 @@
     // obtener altura definida
     
 //    return 208;
-    return UITableViewAutomaticDimension;
+   // return UITableViewAutomaticDimension;
+    return ((pruebaTableViewCell *) [[NSBundle mainBundle] loadNibNamed:@"pruebaTableViewCell" owner:self options:nil].lastObject).frame.size.height;
+
 }
 
 - (void)viewDidLoad {

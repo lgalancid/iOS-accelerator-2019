@@ -26,6 +26,7 @@
 		976F0FC821F10C7C002B676C /* pruebaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976F0FC621F10C7C002B676C /* pruebaTableViewCell.xib */; };
 		976F0FD621F200D0002B676C /* MAOModalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 976F0FD421F200D0002B676C /* MAOModalVC.m */; };
 		976F0FD721F200D0002B676C /* MAOModalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976F0FD521F200D0002B676C /* MAOModalVC.xib */; };
+		97D059022200902E00D89D26 /* MELIiTunesApp in Resources */ = {isa = PBXBuildFile; fileRef = 97D059012200902E00D89D26 /* MELIiTunesApp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		976F0FD321F200D0002B676C /* MAOModalVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAOModalVC.h; sourceTree = "<group>"; };
 		976F0FD421F200D0002B676C /* MAOModalVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOModalVC.m; sourceTree = "<group>"; };
 		976F0FD521F200D0002B676C /* MAOModalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOModalVC.xib; sourceTree = "<group>"; };
+		97D059012200902E00D89D26 /* MELIiTunesApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MELIiTunesApp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				14B0EC9A21E6D191004B2173 /* MyAppOneTests */,
 				14B0ECA521E6D191004B2173 /* MyAppOneUITests */,
 				14B0EC8021E6D18C004B2173 /* Products */,
+				97D059012200902E00D89D26 /* MELIiTunesApp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,6 +346,7 @@
 				14B0EC8F21E6D190004B2173 /* LaunchScreen.storyboard in Resources */,
 				14B0EC8C21E6D190004B2173 /* Assets.xcassets in Resources */,
 				14B0ECC821E6D417004B2173 /* MAOListViewController.xib in Resources */,
+				97D059022200902E00D89D26 /* MELIiTunesApp in Resources */,
 				976F0FC321F10810002B676C /* PruebaViewController.xib in Resources */,
 				14B0ECC221E6D402004B2173 /* MAOInitialViewController.xib in Resources */,
 			);
