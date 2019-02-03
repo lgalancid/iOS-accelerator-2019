@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
                 <outlet property="btnAceptar" destination="zwy-VW-EZL" id="eP6-7h-Rue"/>
+                <outlet property="btnMovimientos" destination="SdT-bp-mn9" id="KiC-cF-QhL"/>
                 <outlet property="lblDescubierto" destination="65n-oG-teu" id="Onu-0F-fP0"/>
                 <outlet property="lblNombreCliente" destination="odq-Rp-nPK" id="o2E-BW-bl0"/>
                 <outlet property="lblSaldo" destination="TyA-z6-9tK" id="0nJ-Xy-ryV"/>
@@ -75,20 +76,42 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyI-H3-YlX">
+                            <rect key="frame" x="260" y="392" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="1aN-BF-1r6"/>
+                                <constraint firstAttribute="width" secondItem="RyI-H3-YlX" secondAttribute="height" multiplier="1:1" id="roE-Pn-Tu9"/>
+                            </constraints>
+                            <state key="normal" image="preferencesIcon"/>
+                            <connections>
+                                <action selector="btnPreferenciasClick:" destination="-1" eventType="touchUpInside" id="K6j-Zj-Tqx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdT-bp-mn9">
+                            <rect key="frame" x="52" y="331" width="181" height="30"/>
+                            <state key="normal" title="Ver todos los movimientos"/>
+                            <connections>
+                                <action selector="btnVerMovimientosClick:" destination="-1" eventType="touchUpInside" id="8Yt-ZQ-DK5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="wT7-XN-at9" firstAttribute="leading" secondItem="uSR-TH-DYu" secondAttribute="leading" constant="8" id="6RE-rd-nPc"/>
+                        <constraint firstAttribute="trailing" secondItem="SdT-bp-mn9" secondAttribute="trailing" constant="55" id="C7n-eB-KYP"/>
                         <constraint firstItem="zsb-Ph-OSK" firstAttribute="top" secondItem="wT7-XN-at9" secondAttribute="bottom" constant="8" id="EET-2s-A8N"/>
                         <constraint firstItem="TyA-z6-9tK" firstAttribute="top" secondItem="bLM-OF-Gf4" secondAttribute="bottom" constant="55" id="Fa1-fi-fsO"/>
                         <constraint firstItem="65n-oG-teu" firstAttribute="top" secondItem="TyA-z6-9tK" secondAttribute="bottom" constant="8" id="Tab-oZ-btp"/>
                         <constraint firstItem="bLM-OF-Gf4" firstAttribute="leading" secondItem="uSR-TH-DYu" secondAttribute="leading" id="Tci-Xl-B3a"/>
+                        <constraint firstAttribute="trailing" secondItem="RyI-H3-YlX" secondAttribute="trailing" constant="8" id="aaI-0W-XXo"/>
                         <constraint firstItem="wT7-XN-at9" firstAttribute="top" secondItem="uSR-TH-DYu" secondAttribute="top" constant="8" id="ecg-xD-Ap8"/>
                         <constraint firstItem="3dV-qX-hrB" firstAttribute="leading" secondItem="uSR-TH-DYu" secondAttribute="leading" constant="55" id="fPD-dd-cwR"/>
                         <constraint firstAttribute="trailing" secondItem="3dV-qX-hrB" secondAttribute="trailing" constant="55" id="hdQ-RR-z5N"/>
                         <constraint firstItem="zsb-Ph-OSK" firstAttribute="leading" secondItem="uSR-TH-DYu" secondAttribute="leading" constant="55" id="iKi-Y1-62z"/>
                         <constraint firstAttribute="trailing" secondItem="wT7-XN-at9" secondAttribute="trailing" constant="8" id="jeR-Vh-16V"/>
                         <constraint firstAttribute="trailing" secondItem="zsb-Ph-OSK" secondAttribute="trailing" constant="55" id="oBB-sj-gCc"/>
+                        <constraint firstItem="SdT-bp-mn9" firstAttribute="leading" secondItem="uSR-TH-DYu" secondAttribute="leading" constant="52" id="rTC-TB-5H1"/>
+                        <constraint firstItem="SdT-bp-mn9" firstAttribute="top" secondItem="65n-oG-teu" secondAttribute="bottom" constant="8" id="vMy-7c-LC8"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monto:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-RW-FFD">
@@ -114,6 +137,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zwy-VW-EZL" secondAttribute="trailing" constant="133" id="4Fu-ej-IbI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="RyI-H3-YlX" secondAttribute="bottom" constant="28" id="510-rn-naB"/>
                 <constraint firstItem="3dV-qX-hrB" firstAttribute="top" secondItem="rAe-RW-FFD" secondAttribute="bottom" constant="10" id="72n-kD-R60"/>
                 <constraint firstItem="65n-oG-teu" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="9bc-1c-QSk"/>
                 <constraint firstItem="zwy-VW-EZL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="133" id="AAI-19-ko9"/>
@@ -138,4 +162,7 @@
             <point key="canvasLocation" x="125.625" y="143.75"/>
         </view>
     </objects>
+    <resources>
+        <image name="preferencesIcon" width="256" height="256"/>
+    </resources>
 </document>

@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "APIBankApp-Swift.h"
+#import "Settings/SettingsViewController.h"
+#import "Movimientos/MovementsViewController.h"
 
 @interface MainViewController ()
 
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSaldo;
 @property (weak, nonatomic) IBOutlet UILabel *lblDescubierto;
 @property (weak, nonatomic) IBOutlet UILabel *lblNombreCliente;
+@property (weak, nonatomic) IBOutlet UIButton *btnMovimientos;
 
 @end
 
@@ -31,37 +34,63 @@ NSUInteger valorGestion;
     [self fnSetup];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self fnRefresh];
+}
+
 -(void)fnSetup {
-    
     _txtMonto.delegate = self;
     valorGestion = 0;
     AccountManagement *accMan = AccountManagement.new;
     
-    [accMan setClient];
-    
-    double balance = [accMan getBalanceWithParIdClient:1];
-    double overdraw = [accMan getOverdrawWithParIdClient:1];
-    
     NSString *clientName = [accMan getClientDataWithParIdClient:1];
     _lblNombreCliente.text = clientName;
     
-    _lblSaldo.text =
-    [NSString stringWithFormat:@"Saldo actual: %.2f",balance];
-    
-    _lblDescubierto.text =
-    [NSString stringWithFormat:@"Descubierto disponible: %.2f",overdraw];
-    
     _txtMonto.keyboardType = UIKeyboardTypeDecimalPad;
-    
+    [self fnCargarDatosBancarios];
 }
+
 -(void)fnRefresh{
     AccountManagement *accMan = AccountManagement.new;
+    double balance = [accMan getBalanceWithParIdClient:1];
+    if (balance <0) {
+        [self fnCargarColorNegativo];
+    }
+}
+
+-(void)fnCargarColorNegativo{
+    AppSettings *AppSets = AppSettings.new;
+    NSString *negColor = AppSets.getNegativeColor;
+    if ([negColor  isEqual: @"Rojo"]) {
+        _lblSaldo.textColor = [UIColor redColor];
+    }
+    else if ([negColor  isEqual: @"Verde"]) {
+        _lblSaldo.textColor = [UIColor greenColor];
+    }
+    else if ([negColor  isEqual: @"Azul"]) {
+        _lblSaldo.textColor = [UIColor blueColor];
+    }
+    else if ([negColor  isEqual: @"Amarillo"]) {
+        _lblSaldo.textColor = [UIColor yellowColor];
+    }
+}
+
+-(void)fnCargarDatosBancarios{
+    AccountManagement *accMan = AccountManagement.new;
+    
+    NSInteger movimientos = [accMan getTransactionsCountWithParIdClient:1];
+    if (movimientos < 1) {
+        _btnMovimientos.enabled = NO;
+    }
+    else {
+        _btnMovimientos.enabled = YES;
+    }
     BOOL negativo = NO;
     double balance = [accMan getBalanceWithParIdClient:1];
     double overdraw = [accMan getOverdrawWithParIdClient:1];
     
     if (balance <0 ) {
-        _lblSaldo.textColor = [UIColor redColor];
+        [self fnCargarColorNegativo];
         negativo = YES;
     }
     else
@@ -71,27 +100,24 @@ NSUInteger valorGestion;
     }
     
     if (!negativo) {
-        
         _lblSaldo.text =
         [NSString stringWithFormat:@"Saldo actual: $%.2f",balance];
-        
     }
     else{
-        
         _lblSaldo.text =
         [NSString stringWithFormat:@"Saldo actual: ($%.2f)",balance];
-        
     }
-    
     _lblDescubierto.text =
     [NSString stringWithFormat:@"Descubierto disponible: $%.2f",overdraw];
-    
+    _txtMonto.text = @"";
     
 }
+
 - (IBAction)selectGestionCambio:(UISegmentedControl *)sender {
     _txtMonto.text = @"";
     valorGestion = [_selectGestion selectedSegmentIndex];
 }
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     NSString *nuevoMonto = [_txtMonto.text stringByReplacingCharactersInRange:range withString:string];
@@ -133,6 +159,7 @@ NSUInteger valorGestion;
         }
     }
 }
+
 - (IBAction)btnAceptarClick:(UIButton *)sender {
     switch (valorGestion) {
         case 0:
@@ -145,17 +172,39 @@ NSUInteger valorGestion;
             break;
     }
 }
+
 -(void)fnExtraer{
     AccountMovement *accMov = AccountMovement.new;
     double monto = [_txtMonto.text doubleValue];
     [accMov WithdrawWithParIdCuenta:1 parMonto:monto];
-    [self fnRefresh];
+    [self fnCargarDatosBancarios];
 }
+
 -(void)fnDepositar{
     AccountMovement *accMov = AccountMovement.new;
     double monto = [_txtMonto.text doubleValue];
     [accMov DepositWithParIdCuenta:1 parMonto:monto];
-    [self fnRefresh];
+    [self fnCargarDatosBancarios];
+}
+
+- (IBAction)btnVerMovimientosClick:(UIButton *)sender {
+    AccountManagement *accMan = AccountManagement.new;
+    NSArray *arrMovimientos = [accMan getTransactionsWithParIdClient:1];
+    
+    MovementsViewController *movTVC = [[MovementsViewController alloc] initWithModel: arrMovimientos];
+    
+    [self showViewController:movTVC sender:nil];
+    
+
+
+}
+
+- (IBAction)btnPreferenciasClick:(UIButton *)sender {
+    SettingsViewController *settings = [[SettingsViewController alloc]init];
+    settings.providesPresentationContextTransitionStyle = YES;
+    settings.definesPresentationContext = YES;
+    [settings setModalPresentationStyle:UIModalPresentationCurrentContext];
+    [self showViewController:settings sender:nil];
 }
 
 @end
